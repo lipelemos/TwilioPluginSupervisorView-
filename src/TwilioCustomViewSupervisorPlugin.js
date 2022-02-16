@@ -39,6 +39,12 @@ export default class TwilioCustomViewSupervisorPlugin extends FlexPlugin {
     flex.ViewCollection.Content.add("dashboards", {
       if: (props) => role.includes("supervisor"),
     });
+    flex.ViewCollection.Content.remove("analyze", {
+      if: (props) => role.includes("supervisor"),
+    });
+    flex.ViewCollection.Content.remove("questionnaires", {
+      if: (props) => role.includes("supervisor"),
+    });
   }
 
   /**
